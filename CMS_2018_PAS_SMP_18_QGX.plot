@@ -1,0 +1,1 @@
+Rivet/SMP/data/CMS_2018_PAS_SMP_18_QGX.plot
