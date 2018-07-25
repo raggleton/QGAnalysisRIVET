@@ -1,0 +1,50 @@
+#! /usr/bin/env python
+
+"""\
+%prog rootfile [yodafile]
+
+Convert a ROOT data file to the YODA data format.
+"""
+
+import yoda, os, sys, optparse
+from yoda.script_helpers import parse_x2y_args, filter_aos
+
+parser = optparse.OptionParser(usage=__doc__)
+parser.add_option("-m", "--match", dest="MATCH", metavar="PATT", default=None,
+                  help="Only write out histograms whose path matches this regex")
+parser.add_option("-M", "--unmatch", dest="UNMATCH", metavar="PATT", default=None,
+                  help="Exclude histograms whose path matches this regex")
+
+opts, args = parser.parse_args()
+in_out = parse_x2y_args(args, ".root", ".yoda")
+if not in_out:
+    sys.stderr.write("You must specify the ROOT and YODA file names\n")
+    sys.exit(1)
+
+import ROOT
+for i, o in in_out:
+    print "opening", i
+    rf = ROOT.TFile(i)
+    rootobjects_raw = list(yoda.root.getall(rf))
+    rootobjects     = [(path, ro) for (path, ro) in rootobjects_raw if not isinstance(ro, ROOT.TH1F)]
+    th1f            = [(path, ro) for (path, ro) in rootobjects_raw if     isinstance(ro, ROOT.TH1F)]
+    print rootobjects
+    print th1f
+    # Conversion of TH1F into TH1D
+    for path, ro in th1f:
+        temp = ROOT.TH1D()
+        ro.Copy(temp)
+        rootobjects.append((path, temp))
+
+    def to_yoda(path, ro):
+        print path, ro
+        ao = yoda.root.to_yoda(ro)
+        ao.path = path
+        return ao
+
+    analysisobjects = [to_yoda(path, ro) for (path, ro) in rootobjects]
+    rf.Close()
+
+    analysisobjects = [ao for ao in analysisobjects if ao is not None]
+    filter_aos(analysisobjects, opts.MATCH, opts.UNMATCH)
+    yoda.writeYODA(analysisobjects, o)
