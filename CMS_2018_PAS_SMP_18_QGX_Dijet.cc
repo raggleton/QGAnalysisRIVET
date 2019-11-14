@@ -83,11 +83,11 @@ namespace Rivet {
 
 
   /// @brief Routine for QG substructure analysis
-  class CMS_2018_PAS_SMP_18_QGX : public Analysis {
+  class CMS_2018_PAS_SMP_18_QGX_Dijet : public Analysis {
   public:
 
     /// Constructor
-    DEFAULT_RIVET_ANALYSIS_CTOR(CMS_2018_PAS_SMP_18_QGX);
+    DEFAULT_RIVET_ANALYSIS_CTOR(CMS_2018_PAS_SMP_18_QGX_Dijet);
 
     /// Book histograms and initialise projections before the run
     void init() {
@@ -486,10 +486,10 @@ namespace Rivet {
       30, 38, 50
     };
     std::vector<float> _ptBinsGen = {
-      50, 65, 88, 120, 150, 186, 254, 326, 408, 481, 614, 800, 1000, 1500, 2000, 10000
+      50, 65, 88, 120, 150, 186, 254, 326, 408, 481, 614, 800, 1000, 1500, 2000, 6500
     };
     std::vector<float> _ptBinsGenZPJ = {
-      50, 65, 88, 120, 150, 186, 254, 326, 408, 481, 614, 800, 10000
+      50, 65, 88, 120, 150, 186, 254, 326, 408, 481, 614, 800, 6500
     };
 
     /// @name Histograms
@@ -507,7 +507,7 @@ namespace Rivet {
 
 
   // The hook for the plugin system
-  DECLARE_RIVET_PLUGIN(CMS_2018_PAS_SMP_18_QGX);
+  DECLARE_RIVET_PLUGIN(CMS_2018_PAS_SMP_18_QGX_Dijet);
 
 
 }
