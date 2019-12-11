@@ -179,7 +179,7 @@ namespace Rivet {
       const ParticleVector & fsParticles = fs.particles();
       vector<PseudoJet> particles;
       particles.reserve(fsParticles.size());
-      for (uint iFS=0; iFS<particles.size(); iFS++){
+      for (uint iFS=0; iFS<fsParticles.size(); iFS++){
         PseudoJet p = fsParticles[iFS].pseudojet();
         p.set_user_index(iFS); // for later reference to original Particles
         particles.push_back(p);
