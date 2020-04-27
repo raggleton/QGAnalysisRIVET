@@ -23,8 +23,8 @@
 
 using std::cout;
 using std::endl;
+using std::vector;
 using namespace fastjet;
-using namespace fastjet::contrib;
 
 
 namespace Rivet {
@@ -34,11 +34,12 @@ namespace Rivet {
   /// custom filtering of daughters first
   class LambdaCalculator {
   public:
-    LambdaCalculator(const vector<PseudoJet> & daughters, float jet_radius, const PseudoJet & jet_vector):
+    LambdaCalculator(const vector<PseudoJet> & daughters, float jet_radius, const PseudoJet & jet_vector, const PseudoJet & wta_jet_vector):
       daughters_(daughters),
       jetRadius_(jet_radius),
       ptSum_(0),
-      jetVector_(jet_vector)
+      jetVector_(jet_vector),
+      wtaJetVector_(wta_jet_vector)
     {
       // cache pt_sum
       for (auto & dtr : daughters_) {
@@ -50,7 +51,8 @@ namespace Rivet {
       float result = 0.;
       for (auto dtr : daughters_) {
         float z = (kappa != 0) ? dtr.pt() / ptSum_ : 1.;
-        float theta = (beta != 0) ? dtr.delta_R(jetVector_) / jetRadius_ : 1.;
+        // Use a dfiferent jet vector depending on beta
+        float theta = (beta != 0) ? dtr.delta_R((beta <= 1) ? wtaJetVector_ : jetVector_) / jetRadius_ : 1.;
         result += (pow(z, kappa) * pow(theta, beta));
       }
       return result;
@@ -59,7 +61,7 @@ namespace Rivet {
   private:
     vector<PseudoJet> daughters_;
     float jetRadius_, ptSum_;
-    PseudoJet jetVector_;
+    PseudoJet jetVector_, wtaJetVector_;
   };
 
 /**
@@ -83,50 +85,49 @@ namespace Rivet {
 
 
   /// @brief Routine for QG substructure analysis
-  class CMS_2018_PAS_SMP_18_QGX_Dijet : public Analysis {
+  class CMS_2018_PAS_SMP_18_QGX_DIJET : public Analysis {
   public:
 
     /// Constructor
-    DEFAULT_RIVET_ANALYSIS_CTOR(CMS_2018_PAS_SMP_18_QGX_Dijet);
+    DEFAULT_RIVET_ANALYSIS_CTOR(CMS_2018_PAS_SMP_18_QGX_DIJET);
 
     /// Book histograms and initialise projections before the run
     void init() {
 
       // Initialise and register projections
-      _jetRadius = 0.4;
-
-      // for the jets
+      // Particles for the jets
       FinalState fs(-5, 5, 0.0*GeV);
       VetoedFinalState jet_input(fs);
       jet_input.vetoNeutrinos();
       // jet_input.addVetoPairId(PID::MUON);
       addProjection(jet_input, "JET_INPUT");
 
-      // const FinalState fs(Cuts::abseta < 5);
-      // declare(FastJets(fs, FastJets::ANTIKT, _jetRadius, JetAlg::ALL_MUONS, JetAlg::NO_INVISIBLES), "Jets");
-
       // Book histograms
-      // resize 2D vector appropriately
-      _h_dijet_cen.resize(_lambdaVars.size(), vector<Histo1DPtr>(_ptBinsGen.size()-1));
-      _h_dijet_cen_groomed.resize(_lambdaVars.size(), vector<Histo1DPtr>(_ptBinsGen.size()-1));
-      _h_dijet_fwd.resize(_lambdaVars.size(), vector<Histo1DPtr>(_ptBinsGen.size()-1));
-      _h_dijet_fwd_groomed.resize(_lambdaVars.size(), vector<Histo1DPtr>(_ptBinsGen.size()-1));
+      // resize vectors appropriately
+      uint nHistsRadii = _jetRadii.size();
+      uint nHistsLambda = _lambdaVars.size();
+      uint nHistsPt = _ptBinsGen.size()-1;
+      _h_dijet_cen.resize(nHistsRadii, vector<vector<Histo1DPtr> >(nHistsLambda, vector<Histo1DPtr>(nHistsPt)));
+      _h_dijet_cen_groomed.resize(nHistsRadii, vector<vector<Histo1DPtr> >(nHistsLambda, vector<Histo1DPtr>(nHistsPt)));
+      _h_dijet_fwd.resize(nHistsRadii, vector<vector<Histo1DPtr> >(nHistsLambda, vector<Histo1DPtr>(nHistsPt)));
+      _h_dijet_fwd_groomed.resize(nHistsRadii, vector<vector<Histo1DPtr> >(nHistsLambda, vector<Histo1DPtr>(nHistsPt)));
 
       // Now book histos
       // remember 1-indexed
-      for (uint lambdaInd=1; lambdaInd <= _lambdaVars.size(); lambdaInd++) {
-        for (uint ptInd=1; ptInd < _ptBinsGen.size(); ptInd++) {
-          _h_dijet_cen[lambdaInd-1][ptInd-1] = bookHisto1D(1, lambdaInd, ptInd);
-          _h_dijet_cen_groomed[lambdaInd-1][ptInd-1] = bookHisto1D(2, lambdaInd, ptInd);
-          _h_dijet_fwd[lambdaInd-1][ptInd-1] = bookHisto1D(3, lambdaInd, ptInd);
-          _h_dijet_fwd_groomed[lambdaInd-1][ptInd-1] = bookHisto1D(4, lambdaInd, ptInd);
+      for (uint radiusInd=1; radiusInd <= _jetRadii.size(); radiusInd++) {
+        for (uint lambdaInd=1; lambdaInd <= _lambdaVars.size(); lambdaInd++) {
+          for (uint ptInd=1; ptInd < _ptBinsGen.size(); ptInd++) {
+            _h_dijet_cen[radiusInd-1][lambdaInd-1][ptInd-1] = bookHisto1D((10*radiusInd) + 1, lambdaInd, ptInd);
+            _h_dijet_cen_groomed[radiusInd-1][lambdaInd-1][ptInd-1] = bookHisto1D((10*radiusInd) + 2, lambdaInd, ptInd);
+            _h_dijet_fwd[radiusInd-1][lambdaInd-1][ptInd-1] = bookHisto1D((10*radiusInd) + 3, lambdaInd, ptInd);
+            _h_dijet_fwd_groomed[radiusInd-1][lambdaInd-1][ptInd-1] = bookHisto1D((10*radiusInd) + 4, lambdaInd, ptInd);
+          }
         }
       }
 
-      // FIXME when more than 1 region
-      _h_pt_jet = bookHisto1D(1, 90, 1);
+      // _h_pt_jet = bookHisto1D(1, 90, 1);
 
-      std::vector<double> binEdges = {
+      vector<double> binEdges = {
         1E-9,
         5E-9,
         1E-8,
@@ -153,18 +154,19 @@ namespace Rivet {
       _h_weight = bookHisto1D("weight_jet_pt", binEdges);
       _h_jet_pt_ov_scale = bookHisto1D("jet_pt_ov_scale", 100, 0, 5);
 
-      // Factor for cuts, to convert from reco to gen
-      _genFactor = 1.25;
-
-      ca_wta_cluster_ = Recluster(JetDefinition(cambridge_algorithm, JetDefinition::max_allowable_R, WTA_pt_scheme),
-                                  false, Recluster::keep_only_hardest);
-      mmdt_.reset(new ModifiedMassDropTagger(0.1));
+      wta_cluster_ = Recluster(JetDefinition(antikt_algorithm, JetDefinition::max_allowable_R, WTA_pt_scheme),
+                               false, Recluster::keep_only_hardest);
+      ca_cluster_ = Recluster(JetDefinition(cambridge_algorithm, JetDefinition::max_allowable_R, WTA_pt_scheme),
+                              false, Recluster::keep_only_hardest);
+      mmdt_.reset(new fastjet::contrib::ModifiedMassDropTagger(0.1));
       mmdt_->set_grooming_mode();
       mmdt_->set_reclustering(false);
     }
 
 
-    uint getBinIndex(float value, std::vector<float> & bins) {
+    // Get index of largest bin smaller than value in vector
+    // e.g. what you'd need when binning a continuous variable
+    uint getBinIndex(float value, const vector<float> & bins) {
       auto itr = std::lower_bound(bins.begin(), bins.end(), value);
       return itr - bins.begin() - 1;
     }
@@ -185,13 +187,15 @@ namespace Rivet {
         particles.push_back(p);
       }
 
-      // Use first ptBin as pt cut since we don't measure anything lower than that
-      JetDefinition jet_def(antikt_algorithm, _jetRadius);
-      double etaCut = 2.5-(_jetRadius/2.);
-      vector<PseudoJet> jets = (SelectorNHardest(2) * SelectorAbsRapMax(etaCut) * SelectorPtMin(15))(jet_def(particles));
+      for (uint radiusInd=0; radiusInd < _jetRadii.size(); radiusInd++) {
+        float jetRadius = _jetRadii.at(radiusInd);
 
-      bool passDijet = false;
-      if (jets.size() >= 2) {
+        JetDefinition jet_def(antikt_algorithm, jetRadius);
+        double etaCut = 2.5-(jetRadius/2.);
+        vector<PseudoJet> jets = (SelectorNHardest(2) * SelectorAbsRapMax(etaCut) * SelectorPtMin(15))(jet_def(particles));
+
+        bool passDijet = false;
+        if (jets.size() < 2) continue;
         const auto & jet1 = jets.at(0);
         const auto & jet2 = jets.at(1);
         float jet1pt = jet1.pt();
@@ -199,90 +203,119 @@ namespace Rivet {
         float asym = (jet1pt - jet2pt) / (jet1pt+jet2pt);
         float dphi = Rivet::deltaPhi(jet1.phi(), jet2.phi());
         auto * genEvt = event.genEvent();
-        float pt_ov_scale = jet1pt / genEvt->event_scale(); // cut on this to avoid large-weight events from high jet pt, low ptHat
-        passDijet = (asym < 0.3*_genFactor && dphi > 2.0/_genFactor && pt_ov_scale < 2.);
+        // cut on this to avoid large-weight events from high jet pt, low ptHat
+        float pt_ov_scale = jet1pt / genEvt->event_scale();
+        passDijet = ((asym < 0.3) && (dphi > 2.0) && (pt_ov_scale < 2.));
 
-        if (passDijet) {
-          // Sort by increasing absolute eta
-          vector<PseudoJet> dijets = {jet1, jet2};
-          std::sort(dijets.begin(), dijets.end(), 
-                    [] (const PseudoJet & A, const PseudoJet & B)
-                    { return fabs(A.eta()) < fabs(B.eta()); }
-                   );
+        if (!passDijet) continue;
 
-          for (uint iJ=0; iJ<dijets.size(); iJ++) {
-            bool isCentral = (iJ == 0);
-            PseudoJet & jetItr = dijets[iJ];
+        // Sort by increasing absolute eta
+        vector<PseudoJet> dijets = {jet1, jet2};
+        std::sort(dijets.begin(), dijets.end(),
+                  [] (const PseudoJet & A, const PseudoJet & B)
+                  { return fabs(A.eta()) < fabs(B.eta()); }
+                 );
 
-            _h_pt_jet->fill(jetItr.pt(), weight);
+        for (uint iJ=0; iJ<dijets.size(); iJ++) {
+          bool isCentral = (iJ == 0);
+          PseudoJet & jetItr = dijets[iJ];
 
-            // handle underflow, since genjet pt cut is < first bin edge
-            // do after filling pt hist to match what's done in main analysis
-            // NB if smearing, need to handle this properly like TUnfold does
-            // FIXME should we just increase genjet pt cut to ~match reco?
-            if (jetItr.pt() < _ptBinsGen[0]) continue;
+          // _h_pt_jet->fill(jetItr.pt(), weight);
 
-            _h_weight->fill(weight);
-            _h_jet_pt_ov_scale->fill(jetItr.pt() / genEvt->event_scale());
+          // Simplify life - ignore this jet if it is below 1st hist pt range
+          // Note that we don't apply it to the original jet pt cut - since
+          // we have phase space where one jet is > 50, and one < 50
+          if (jetItr.pt() < _ptBinsGen[0]) continue;
+          // ignore jet if beyond the last bin
+          if (jetItr.pt() > _ptBinsGen.back()) continue;
 
-            uint ptBinInd = getBinIndex(jetItr.pt(), _ptBinsGen);
+          _h_weight->fill(weight);
+          _h_jet_pt_ov_scale->fill(jetItr.pt() / genEvt->event_scale());
 
-            // Get WTA jet axis used for Lambda calculations
-            // TODO check this
-            PseudoJet wtaJet = ca_wta_cluster_(jetItr);
+          // Need to use original, ungroomed jet pT to bin
+          uint ptBinInd = getBinIndex(jetItr.pt(), _ptBinsGen);
 
-            // Setup calculators
-            LambdaCalculator lambdaCalc(jetItr.constituents(), _jetRadius, wtaJet);
+          // UNGROOMED VERSION
+          // -------------------------------------------------------------------
 
-            // Do a version with charged-only constituents
-            vector<PseudoJet> chargedConstits;
-            foreach (const PseudoJet & p, jetItr.constituents()) {
-              if (fsParticles.at(p.user_index()).isCharged()) chargedConstits.push_back(p);
+          // Apply pT cut to constituents first
+          vector<PseudoJet> constits = SelectorPtMin(_constitPtMin)(jetItr.constituents());
+
+          // since this is the superset, if this fails, nothing else will pass
+          if (!(constits.size() >= _minNumConstits)) continue;
+
+          // Setup calculators
+          // Get WTA jet axis used for Lambda calculations
+          PseudoJet wtaJet = wta_cluster_(jetItr);
+          LambdaCalculator lambdaCalc(constits, jetRadius, jetItr, wtaJet);
+
+          // Do a version with charged-only constituents
+          vector<PseudoJet> chargedConstits;
+          foreach (const PseudoJet & p, constits) {
+            if (fsParticles.at(p.user_index()).isCharged()) chargedConstits.push_back(p);
+          }
+
+          bool passCharged = (chargedConstits.size() >= _minNumConstits);
+          LambdaCalculator lambdaCalcCharged(chargedConstits, jetRadius, jetItr, wtaJet);
+
+          // Fill hists for each lambda variable
+          for (uint lambdaInd=0; lambdaInd < _lambdaVars.size(); lambdaInd++) {
+            const LambdaVar & thisLambdaVar = _lambdaVars[lambdaInd];
+            if (thisLambdaVar.isCharged && !passCharged) continue;
+
+            LambdaCalculator & thisLambdaCalc = (thisLambdaVar.isCharged) ? lambdaCalcCharged : lambdaCalc;
+            float val = thisLambdaCalc.getLambda(thisLambdaVar.kappa, thisLambdaVar.beta);
+
+            if (isCentral) {
+              _h_dijet_cen[radiusInd][lambdaInd][ptBinInd]->fill(val, weight);
+            } else {
+              _h_dijet_fwd[radiusInd][lambdaInd][ptBinInd]->fill(val, weight);
             }
-            LambdaCalculator lambdaCalcCharged(chargedConstits, _jetRadius, wtaJet);
+          }
 
-            // Fill hists according to matching kappa/beta, etc
-            for (uint lambdaInd=1; lambdaInd <= _lambdaVars.size(); lambdaInd++) {
-              const LambdaVar & thisLambdaVar = _lambdaVars[lambdaInd-1];
-              LambdaCalculator & thisLambdaCalc = (thisLambdaVar.isCharged) ? lambdaCalcCharged : lambdaCalc;
-              float val = thisLambdaCalc.getLambda(thisLambdaVar.kappa, thisLambdaVar.beta);
-              if (isCentral) {
-                _h_dijet_cen[lambdaInd-1][ptBinInd]->fill(val, weight);
-              } else {
-                _h_dijet_fwd[lambdaInd-1][ptBinInd]->fill(val, weight);
-              }
+          // GROOMED VERSION
+          // -------------------------------------------------------------------
+          // Get groomed jet
+          PseudoJet caJet = ca_cluster_(jetItr);
+          PseudoJet groomedJet = (*mmdt_)(caJet);
+
+          // Apply pT cut to constituents first
+          vector<PseudoJet> groomedConstits = SelectorPtMin(_constitPtMin)(groomedJet.constituents());
+          if (!(groomedConstits.size() >= _minNumConstits)) continue;
+
+          // Setup calculators
+          // Use groomed axis instead to calculate theta
+          // Get WTA jet axis used for Lambda calculations
+          PseudoJet wtaGroomedJet = wta_cluster_(groomedJet);
+          LambdaCalculator lambdaCalcGroomed(groomedConstits, jetRadius, groomedJet, wtaGroomedJet);
+
+          // Do a version with charged-only constituents
+          vector<PseudoJet> chargedConstitsGroomed;
+          foreach (const PseudoJet & p, groomedConstits) {
+            if (fsParticles.at(p.user_index()).isCharged()) chargedConstitsGroomed.push_back(p);
+          }
+
+          bool passChargedGroomed = (chargedConstitsGroomed.size() >= _minNumConstits);
+          LambdaCalculator lambdaCalcChargedGroomed(chargedConstitsGroomed, jetRadius, groomedJet, wtaGroomedJet);
+
+          // Fill hists for each lambda variable
+          for (uint lambdaInd=0; lambdaInd < _lambdaVars.size(); lambdaInd++) {
+            const LambdaVar & thisLambdaVar = _lambdaVars[lambdaInd];
+            if (thisLambdaVar.isCharged && !passChargedGroomed) continue;
+
+            LambdaCalculator & thisLambdaCalc = (thisLambdaVar.isCharged) ? lambdaCalcChargedGroomed : lambdaCalcGroomed;
+            float val = thisLambdaCalc.getLambda(thisLambdaVar.kappa, thisLambdaVar.beta);
+
+            if (isCentral) {
+              _h_dijet_cen_groomed[radiusInd][lambdaInd][ptBinInd]->fill(val, weight);
+            } else {
+              _h_dijet_fwd_groomed[radiusInd][lambdaInd][ptBinInd]->fill(val, weight);
             }
+          }
 
-            // Do groomed version
-            PseudoJet groomedJet = (*mmdt_)(jetItr);
-
-            // Setup calculators
-            // Use groomed axis instead to calculate theta
-            // TODO check this
-            LambdaCalculator lambdaCalcGroomed(groomedJet.constituents(), _jetRadius, groomedJet);
-            // Do a version with charged-only constituents
-            // There must be a nicer way to filter...
-            vector<PseudoJet> chargedConstitsGroomed;
-            foreach (const PseudoJet & p, groomedJet.constituents()) {
-              if (fsParticles.at(p.user_index()).isCharged()) chargedConstitsGroomed.push_back(p);
-            }
-            LambdaCalculator lambdaCalcChargedGroomed(chargedConstitsGroomed, _jetRadius, groomedJet);
-
-            // Fill hists according to matching kappa/beta, etc
-            for (uint lambdaInd=1; lambdaInd <= _lambdaVars.size(); lambdaInd++) {
-              const LambdaVar & thisLambdaVar = _lambdaVars[lambdaInd-1];
-              LambdaCalculator & thisLambdaCalc = (thisLambdaVar.isCharged) ? lambdaCalcChargedGroomed : lambdaCalcGroomed;
-              float val = thisLambdaCalc.getLambda(thisLambdaVar.kappa, thisLambdaVar.beta);
-              if (isCentral) {
-                _h_dijet_cen_groomed[lambdaInd-1][ptBinInd]->fill(val, weight);
-              } else {
-                _h_dijet_fwd_groomed[lambdaInd-1][ptBinInd]->fill(val, weight);
-              }
-            }
-          } // end loop over dijets
-        } // end if passDijet
-      } // end jets.size check
-    }
+        } // end loop over dijets
+      } // end loop over jet radii
+    } // end analyze() function
 
     /**
      * Convert TH2 to TMatrixD. FIXME: errors not included. Use std::pair?
@@ -438,7 +471,7 @@ namespace Rivet {
       float lumi = 35918;
 
       // norm hists to cross section
-      scale(_h_pt_jet, lumi * crossSection() / sumOfWeights());
+      // scale(_h_pt_jet, lumi * crossSection() / sumOfWeights());
 
       // normalise hists to unity
       // TODO does it divide by bin width?
@@ -468,9 +501,14 @@ namespace Rivet {
       // _h_pt_jet->reset();
       // refil_histo1d_from_tvector(_h_pt_jet, pt_folded, oflow);
 
-    }
+    } // end of finalize
 
-    std::vector<LambdaVar> _lambdaVars = {
+    // Order matters here
+    const vector<float> _jetRadii = {0.4, 0.8};
+
+    // This order is important! index in vector used to create YODA plot name
+    // Must match that in extracRivetPlotsDijet.py
+    const vector<LambdaVar> _lambdaVars = {
       LambdaVar("jet_puppiMultiplicity", 0, 0, false),
       LambdaVar("jet_pTD", 2, 0, false),
       LambdaVar("jet_LHA", 1, 0.5, false),
@@ -482,32 +520,34 @@ namespace Rivet {
       LambdaVar("jet_width_charged", 1, 1, true),
       LambdaVar("jet_thrust_charged", 1, 2, true),
     };
-    std::vector<float> _ptBinsGenUnderflow = {
-      30, 38, 50
-    };
-    std::vector<float> _ptBinsGen = {
-      50, 65, 88, 120, 150, 186, 254, 326, 408, 481, 614, 800, 1000, 1500, 2000, 6500
-    };
-    std::vector<float> _ptBinsGenZPJ = {
-      50, 65, 88, 120, 150, 186, 254, 326, 408, 481, 614, 800, 6500
+
+    const vector<float> _ptBinsGen = {
+      50, 65, 88, 120, 150, 186, 254, 326, 408, 481, 614, 800, 1000, 4000
     };
 
     /// @name Histograms
     Histo1DPtr _h_pt_jet;
     Histo1DPtr _h_weight, _h_jet_pt_ov_scale;
 
-    std::vector<std::vector<Histo1DPtr>> _h_dijet_cen, _h_dijet_cen_groomed, _h_dijet_fwd, _h_dijet_fwd_groomed;
+    // 3D vector: [jet radius][lambda variable][pt bin]
+    // since each pt bin has its own normalised distribution
+    vector<vector<vector<Histo1DPtr> > > _h_dijet_cen,
+                                         _h_dijet_cen_groomed,
+                                         _h_dijet_fwd,
+                                         _h_dijet_fwd_groomed;
 
-    float _jetRadius, _genFactor;
+    const float _constitPtMin = 1.;
+    const uint _minNumConstits = 2;
 
-    Recluster ca_wta_cluster_;
-    std::unique_ptr<ModifiedMassDropTagger> mmdt_;
+    Recluster wta_cluster_;
+    Recluster ca_cluster_;
+    std::unique_ptr<fastjet::contrib::ModifiedMassDropTagger> mmdt_;
 
   };
 
 
   // The hook for the plugin system
-  DECLARE_RIVET_PLUGIN(CMS_2018_PAS_SMP_18_QGX_Dijet);
+  DECLARE_RIVET_PLUGIN(CMS_2018_PAS_SMP_18_QGX_DIJET);
 
 
 }
