@@ -1,6 +1,6 @@
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y01
 Title=AK4 jets, Z+jets region, $50 < p_{T}^{jet} < 65$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -15,7 +15,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y02
 Title=AK4 jets, Z+jets region, $65 < p_{T}^{jet} < 88$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -30,7 +30,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y03
 Title=AK4 jets, Z+jets region, $88 < p_{T}^{jet} < 120$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -45,7 +45,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y04
 Title=AK4 jets, Z+jets region, $120 < p_{T}^{jet} < 150$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -60,7 +60,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y05
 Title=AK4 jets, Z+jets region, $150 < p_{T}^{jet} < 186$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -75,7 +75,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y06
 Title=AK4 jets, Z+jets region, $186 < p_{T}^{jet} < 254$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -90,7 +90,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y07
 Title=AK4 jets, Z+jets region, $254 < p_{T}^{jet} < 326$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -105,7 +105,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y08
 Title=AK4 jets, Z+jets region, $326 < p_{T}^{jet} < 408$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -120,7 +120,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y09
 Title=AK4 jets, Z+jets region, $408 < p_{T}^{jet} < 481$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -135,7 +135,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y10
 Title=AK4 jets, Z+jets region, $481 < p_{T}^{jet} < 614$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -150,7 +150,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y11
 Title=AK4 jets, Z+jets region, $614 < p_{T}^{jet} < 800$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -165,7 +165,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x01-y12
 Title=AK4 jets, Z+jets region, $800 < p_{T}^{jet} < 2000$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -900,7 +900,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y01
 Title=AK4 jets, Z+jets region, $50 < p_{T}^{jet} < 65$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -915,7 +915,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y02
 Title=AK4 jets, Z+jets region, $65 < p_{T}^{jet} < 88$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -930,7 +930,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y03
 Title=AK4 jets, Z+jets region, $88 < p_{T}^{jet} < 120$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -945,7 +945,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y04
 Title=AK4 jets, Z+jets region, $120 < p_{T}^{jet} < 150$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -960,7 +960,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y05
 Title=AK4 jets, Z+jets region, $150 < p_{T}^{jet} < 186$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -975,7 +975,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y06
 Title=AK4 jets, Z+jets region, $186 < p_{T}^{jet} < 254$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -990,7 +990,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y07
 Title=AK4 jets, Z+jets region, $254 < p_{T}^{jet} < 326$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1005,7 +1005,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y08
 Title=AK4 jets, Z+jets region, $326 < p_{T}^{jet} < 408$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1020,7 +1020,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y09
 Title=AK4 jets, Z+jets region, $408 < p_{T}^{jet} < 481$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1035,7 +1035,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y10
 Title=AK4 jets, Z+jets region, $481 < p_{T}^{jet} < 614$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1050,7 +1050,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y11
 Title=AK4 jets, Z+jets region, $614 < p_{T}^{jet} < 800$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1065,7 +1065,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d11-x06-y12
 Title=AK4 jets, Z+jets region, $800 < p_{T}^{jet} < 2000$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1800,7 +1800,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y01
 Title=AK4 jets, Z+jets region, $50 < p_{T}^{jet} < 65$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1815,7 +1815,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y02
 Title=AK4 jets, Z+jets region, $65 < p_{T}^{jet} < 88$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1830,7 +1830,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y03
 Title=AK4 jets, Z+jets region, $88 < p_{T}^{jet} < 120$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1845,7 +1845,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y04
 Title=AK4 jets, Z+jets region, $120 < p_{T}^{jet} < 150$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1860,7 +1860,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y05
 Title=AK4 jets, Z+jets region, $150 < p_{T}^{jet} < 186$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1875,7 +1875,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y06
 Title=AK4 jets, Z+jets region, $186 < p_{T}^{jet} < 254$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1890,7 +1890,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y07
 Title=AK4 jets, Z+jets region, $254 < p_{T}^{jet} < 326$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1905,7 +1905,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y08
 Title=AK4 jets, Z+jets region, $326 < p_{T}^{jet} < 408$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1920,7 +1920,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y09
 Title=AK4 jets, Z+jets region, $408 < p_{T}^{jet} < 481$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1935,7 +1935,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y10
 Title=AK4 jets, Z+jets region, $481 < p_{T}^{jet} < 614$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1950,7 +1950,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y11
 Title=AK4 jets, Z+jets region, $614 < p_{T}^{jet} < 800$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -1965,7 +1965,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x01-y12
 Title=AK4 jets, Z+jets region, $800 < p_{T}^{jet} < 2000$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2700,7 +2700,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y01
 Title=AK4 jets, Z+jets region, $50 < p_{T}^{jet} < 65$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2715,7 +2715,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y02
 Title=AK4 jets, Z+jets region, $65 < p_{T}^{jet} < 88$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2730,7 +2730,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y03
 Title=AK4 jets, Z+jets region, $88 < p_{T}^{jet} < 120$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2745,7 +2745,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y04
 Title=AK4 jets, Z+jets region, $120 < p_{T}^{jet} < 150$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2760,7 +2760,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y05
 Title=AK4 jets, Z+jets region, $150 < p_{T}^{jet} < 186$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2775,7 +2775,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y06
 Title=AK4 jets, Z+jets region, $186 < p_{T}^{jet} < 254$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2790,7 +2790,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y07
 Title=AK4 jets, Z+jets region, $254 < p_{T}^{jet} < 326$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2805,7 +2805,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y08
 Title=AK4 jets, Z+jets region, $326 < p_{T}^{jet} < 408$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2820,7 +2820,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y09
 Title=AK4 jets, Z+jets region, $408 < p_{T}^{jet} < 481$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2835,7 +2835,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y10
 Title=AK4 jets, Z+jets region, $481 < p_{T}^{jet} < 614$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2850,7 +2850,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y11
 Title=AK4 jets, Z+jets region, $614 < p_{T}^{jet} < 800$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -2865,7 +2865,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d12-x06-y12
 Title=AK4 jets, Z+jets region, $800 < p_{T}^{jet} < 2000$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3600,7 +3600,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y01
 Title=AK8 jets, Z+jets region, $50 < p_{T}^{jet} < 65$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3615,7 +3615,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y02
 Title=AK8 jets, Z+jets region, $65 < p_{T}^{jet} < 88$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3630,7 +3630,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y03
 Title=AK8 jets, Z+jets region, $88 < p_{T}^{jet} < 120$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3645,7 +3645,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y04
 Title=AK8 jets, Z+jets region, $120 < p_{T}^{jet} < 150$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3660,7 +3660,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y05
 Title=AK8 jets, Z+jets region, $150 < p_{T}^{jet} < 186$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3675,7 +3675,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y06
 Title=AK8 jets, Z+jets region, $186 < p_{T}^{jet} < 254$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3690,7 +3690,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y07
 Title=AK8 jets, Z+jets region, $254 < p_{T}^{jet} < 326$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3705,7 +3705,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y08
 Title=AK8 jets, Z+jets region, $326 < p_{T}^{jet} < 408$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3720,7 +3720,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y09
 Title=AK8 jets, Z+jets region, $408 < p_{T}^{jet} < 481$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3735,7 +3735,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y10
 Title=AK8 jets, Z+jets region, $481 < p_{T}^{jet} < 614$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3750,7 +3750,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y11
 Title=AK8 jets, Z+jets region, $614 < p_{T}^{jet} < 800$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -3765,7 +3765,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x01-y12
 Title=AK8 jets, Z+jets region, $800 < p_{T}^{jet} < 2000$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4500,7 +4500,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y01
 Title=AK8 jets, Z+jets region, $50 < p_{T}^{jet} < 65$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4515,7 +4515,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y02
 Title=AK8 jets, Z+jets region, $65 < p_{T}^{jet} < 88$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4530,7 +4530,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y03
 Title=AK8 jets, Z+jets region, $88 < p_{T}^{jet} < 120$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4545,7 +4545,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y04
 Title=AK8 jets, Z+jets region, $120 < p_{T}^{jet} < 150$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4560,7 +4560,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y05
 Title=AK8 jets, Z+jets region, $150 < p_{T}^{jet} < 186$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4575,7 +4575,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y06
 Title=AK8 jets, Z+jets region, $186 < p_{T}^{jet} < 254$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4590,7 +4590,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y07
 Title=AK8 jets, Z+jets region, $254 < p_{T}^{jet} < 326$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4605,7 +4605,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y08
 Title=AK8 jets, Z+jets region, $326 < p_{T}^{jet} < 408$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4620,7 +4620,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y09
 Title=AK8 jets, Z+jets region, $408 < p_{T}^{jet} < 481$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4635,7 +4635,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y10
 Title=AK8 jets, Z+jets region, $481 < p_{T}^{jet} < 614$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4650,7 +4650,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y11
 Title=AK8 jets, Z+jets region, $614 < p_{T}^{jet} < 800$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -4665,7 +4665,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d21-x06-y12
 Title=AK8 jets, Z+jets region, $800 < p_{T}^{jet} < 2000$ GeV
-XLabel=PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5400,7 +5400,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y01
 Title=AK8 jets, Z+jets region, $50 < p_{T}^{jet} < 65$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5415,7 +5415,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y02
 Title=AK8 jets, Z+jets region, $65 < p_{T}^{jet} < 88$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5430,7 +5430,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y03
 Title=AK8 jets, Z+jets region, $88 < p_{T}^{jet} < 120$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5445,7 +5445,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y04
 Title=AK8 jets, Z+jets region, $120 < p_{T}^{jet} < 150$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5460,7 +5460,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y05
 Title=AK8 jets, Z+jets region, $150 < p_{T}^{jet} < 186$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5475,7 +5475,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y06
 Title=AK8 jets, Z+jets region, $186 < p_{T}^{jet} < 254$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5490,7 +5490,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y07
 Title=AK8 jets, Z+jets region, $254 < p_{T}^{jet} < 326$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5505,7 +5505,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y08
 Title=AK8 jets, Z+jets region, $326 < p_{T}^{jet} < 408$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5520,7 +5520,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y09
 Title=AK8 jets, Z+jets region, $408 < p_{T}^{jet} < 481$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5535,7 +5535,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y10
 Title=AK8 jets, Z+jets region, $481 < p_{T}^{jet} < 614$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5550,7 +5550,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y11
 Title=AK8 jets, Z+jets region, $614 < p_{T}^{jet} < 800$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -5565,7 +5565,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x01-y12
 Title=AK8 jets, Z+jets region, $800 < p_{T}^{jet} < 2000$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6300,7 +6300,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y01
 Title=AK8 jets, Z+jets region, $50 < p_{T}^{jet} < 65$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6315,7 +6315,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y02
 Title=AK8 jets, Z+jets region, $65 < p_{T}^{jet} < 88$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6330,7 +6330,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y03
 Title=AK8 jets, Z+jets region, $88 < p_{T}^{jet} < 120$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6345,7 +6345,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y04
 Title=AK8 jets, Z+jets region, $120 < p_{T}^{jet} < 150$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6360,7 +6360,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y05
 Title=AK8 jets, Z+jets region, $150 < p_{T}^{jet} < 186$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6375,7 +6375,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y06
 Title=AK8 jets, Z+jets region, $186 < p_{T}^{jet} < 254$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6390,7 +6390,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y07
 Title=AK8 jets, Z+jets region, $254 < p_{T}^{jet} < 326$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6405,7 +6405,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y08
 Title=AK8 jets, Z+jets region, $326 < p_{T}^{jet} < 408$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6420,7 +6420,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y09
 Title=AK8 jets, Z+jets region, $408 < p_{T}^{jet} < 481$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6435,7 +6435,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y10
 Title=AK8 jets, Z+jets region, $481 < p_{T}^{jet} < 614$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6450,7 +6450,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y11
 Title=AK8 jets, Z+jets region, $614 < p_{T}^{jet} < 800$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
@@ -6465,7 +6465,7 @@ LegendXPos=0.3
 
 # BEGIN PLOT /CMS_2018_PAS_SMP_18_QGX_ZPJ/d22-x06-y12
 Title=AK8 jets, Z+jets region, $800 < p_{T}^{jet} < 2000$ GeV
-XLabel=Groomed PUPPI-weighted multiplicity $\lambda_{0}^{0}$ (charged only)
+XLabel=Groomed multiplicity $\lambda_{0}^{0}$ (charged only)
 YLabel=$\frac{1}{\mathrm d N / \mathrm d p_{T}}\frac{\mathrm d^{2}N}{\mathrm d p_{T}~\mathrm d \lambda_{0}^{0}}$
 LeftMargin=1.7
 XMin=0.000000
