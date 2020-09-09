@@ -21,7 +21,7 @@ The phase space is divided into:
 
 An example CMSSW routine with the generator configuration is in [`RIVET_QCD_Pt-15To7000_TuneCUETP8M1_Flat_13TeV-pythia8_cff.py`](RIVET_QCD_Pt-15To7000_TuneCUETP8M1_Flat_13TeV-pythia8_cff.py), generating PYTHIA8 QCD events with the P8M1 tune.
 
-A few example YODA files have been included, produced by different generators:
+**OUTDATED** A few example YODA files have been included, produced by different generators:
 
 - [`CMS_2018_PAS_SMP_18_QGX_DIJET_GEN_MGPYTHIA.yoda`](CMS_2018_PAS_SMP_18_QGX_DIJET_GEN_MGPYTHIA.yoda): MadGraph5_2.2.2 + PYTHIA 8.212, P8M1 tune
 - [`CMS_2018_PAS_SMP_18_QGX_DIJET_GEN_PYTHIA_FLAT.yoda`](CMS_2018_PAS_SMP_18_QGX_DIJET_GEN_PYTHIA_FLAT.yoda): PYTHIA 8.?, P8M1 tune
@@ -47,7 +47,7 @@ The phase space is divided into:
 - ungroomed & groomed versions of the variables (groomed with Modified Mass-Drop Tagging)
 - separate jet pT bins
 
-An example YODA file has been included, [`CMS_2018_PAS_SMP_18_QGX_ZPJ_GEN_MGPYTHIA.yoda`](CMS_2018_PAS_SMP_18_QGX_ZPJ_GEN_MGPYTHIA.yoda), made by MG5 + Pythia8 with the P8M1 tune.
+**OUTDATED** An example YODA file has been included, [`CMS_2018_PAS_SMP_18_QGX_ZPJ_GEN_MGPYTHIA.yoda`](CMS_2018_PAS_SMP_18_QGX_ZPJ_GEN_MGPYTHIA.yoda), made by MG5 + Pythia8 with the P8M1 tune.
 
 ### Histogram naming scheme
 
