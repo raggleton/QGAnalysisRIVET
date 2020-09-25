@@ -117,7 +117,6 @@ protected:
       FinalState fs(-5, 5, 0.0*GeV);
       VetoedFinalState jet_input(fs);
       jet_input.vetoNeutrinos();
-      // jet_input.addVetoPairId(PID::MUON);
       addProjection(jet_input, "JET_INPUT");
 
       // for the muons
