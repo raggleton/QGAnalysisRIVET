@@ -231,7 +231,7 @@ protected:
         float jetRadius = _jetRadii.at(radiusInd);
 
         JetDefinition jet_def(antikt_algorithm, jetRadius);
-        vector<PseudoJet> jets = (SelectorNHardest(2) * SelectorAbsRapMax(1.7) * SelectorPtMin(15))(jet_def(particles));
+        vector<PseudoJet> jets = (SelectorNHardest(1) * SelectorAbsRapMax(1.7) * SelectorPtMin(15))(jet_def(particles));
 
         const FinalState& muons = applyProjection<IdentifiedFinalState>(event, "MUONS_NOCUT");
         _h_n_muons_no_cut->fill(muons.size(), weight);
