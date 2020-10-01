@@ -235,7 +235,6 @@ protected:
 
         const FinalState& muons = applyProjection<IdentifiedFinalState>(event, "MUONS_NOCUT");
         _h_n_muons_no_cut->fill(muons.size(), weight);
-        float my_z_pt = 0;
         if (muons.size() >= 2) {
           Particle muon1 = muons.particlesByPt()[0];
           Particle muon2 = muons.particlesByPt()[1];
@@ -245,7 +244,6 @@ protected:
           _h_pt_mu_no_cut->fill(muon2.pt(), weight);
           _h_eta_mu_no_cut->fill(muon1.eta(), weight);
           _h_eta_mu_no_cut->fill(muon2.eta(), weight);
-          my_z_pt = z.pt();
 
           if (jets.size() > 0) {
             PseudoJet jet1 = jets[0];
@@ -262,15 +260,20 @@ protected:
         const Particle & z = zfinder.bosons()[0];
         double zpt = z.pt();
 
-        // sanity test - is my z finding the same as ZFinder?
-        if (! fuzzyEquals(zpt, my_z_pt)) {
-          cout << "Error: zpt = "  << zpt << " my_z_pt = " << my_z_pt << endl;
-        }
-
         // Now do selection criteria
         bool passZpJ = false;
         if (jets.size() < 1) continue;
-        const auto & jet1 = jets.at(0);
+        PseudoJet jet1;
+        bool overlap = false;
+        for (const auto & j : jets) {
+          overlap = false;
+          for (const auto & m : muons.particlesByPt()) {
+            if ((m.pt() > 0.5*j.pt()) && (j.squared_distance(m) < jetRadius*jetRadius)) {
+              overlap = true; break; }
+          }
+          if (!overlap) { jet1 = j; break; } // Jet without overlap found
+        }
+        if (overlap) continue; // No jet without overlap found
         float jet1pt = jet1.pt();
         float dphi = Rivet::deltaPhi(jet1.phi(), z.phi());
         passZpJ = ((zpt > 30) && (dphi > 2.0));
