@@ -275,8 +275,9 @@ protected:
         }
         if (overlap) continue; // No jet without overlap found
         float jet1pt = jet1.pt();
+        float asym = fabs((jet1pt - zpt) / (jet1pt+zpt));
         float dphi = Rivet::deltaPhi(jet1.phi(), z.phi());
-        passZpJ = ((zpt > 30) && (dphi > 2.0));
+        passZpJ = ((zpt > 30) && (asym < 0.3) && (dphi > 2.0));
 
         if (!passZpJ) continue;
 
