@@ -60,8 +60,10 @@ public:
       denominator += pt;
       num += 1;
     }
-    if (!((num >= _minNumConstits) && (denominator > 0))) return -1;
-    // the formula is only correct for the the typical angularities which satisfy either kappa==1 or beta==0.
+    if (denominator == 0) return -1;
+    else if ((num == 1) && (_kappa==0) && (_alpha==0)) return 1; // e.g. multiplicity variable
+    else if (num == 1) return 0;
+    // the formula is only correct for the the typical angularities which satisfy either kappa==1 or alpha==0.
     else return numerator/(pow(denominator, _kappa)*pow(_radius, _alpha));
   }
 
@@ -76,7 +78,6 @@ protected:
   double _alpha, _radius, _kappa;
   bool _isCharged;
   Selector _constitCut;
-  const uint _minNumConstits = 2;
 };
 
 
@@ -113,12 +114,7 @@ protected:
     void init() {
 
       // Initialise and register projections
-      // Particles for the jets
       FinalState fs(-5, 5, 0.0*GeV);
-      VetoedFinalState jet_input(fs);
-      jet_input.vetoNeutrinos();
-      addProjection(jet_input, "JET_INPUT");
-
       // for the muons
       double mu_pt = 26.;
       double mz_min = (90-20);
@@ -135,6 +131,12 @@ protected:
       FinalState fs_muons(-eta_max, eta_max, 0*GeV);
       IdentifiedFinalState muons_noCut(fs_muons, {PID::MUON, PID::ANTIMUON});
       addProjection(muons_noCut, "MUONS_NOCUT");
+
+      // Particles for the jets
+      VetoedFinalState jet_input(fs);
+      jet_input.vetoNeutrinos();
+      jet_input.addVetoOnThisFinalState(getProjection<ZFinder>("ZFinder"));
+      addProjection(jet_input, "JET_INPUT");
 
       // Book histograms
       // resize vectors appropriately
@@ -263,17 +265,7 @@ protected:
         // Now do selection criteria
         bool passZpJ = false;
         if (jets.size() < 1) continue;
-        PseudoJet jet1;
-        bool overlap = false;
-        for (const auto & j : jets) {
-          overlap = false;
-          for (const auto & m : muons.particlesByPt()) {
-            if ((m.pt() > 0.5*j.pt()) && (j.squared_distance(m) < jetRadius*jetRadius)) {
-              overlap = true; break; }
-          }
-          if (!overlap) { jet1 = j; break; } // Jet without overlap found
-        }
-        if (overlap) continue; // No jet without overlap found
+        PseudoJet jet1 = jets[0];
         float jet1pt = jet1.pt();
         float asym = fabs((jet1pt - zpt) / (jet1pt+zpt));
         float dphi = Rivet::deltaPhi(jet1.phi(), z.phi());
