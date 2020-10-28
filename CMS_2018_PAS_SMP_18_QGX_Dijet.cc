@@ -58,8 +58,10 @@ public:
       denominator += pt;
       num += 1;
     }
-    if (!((num >= _minNumConstits) && (denominator > 0))) return -1;
-    // the formula is only correct for the the typical angularities which satisfy either kappa==1 or beta==0.
+    if (denominator == 0) return -1;
+    else if ((num == 1) && (_kappa==0) && (_alpha==0)) return 1; // e.g. multiplicity variable
+    else if (num == 1) return 0;
+    // the formula is only correct for the the typical angularities which satisfy either kappa==1 or alpha==0.
     else return numerator/(pow(denominator, _kappa)*pow(_radius, _alpha));
   }
 
