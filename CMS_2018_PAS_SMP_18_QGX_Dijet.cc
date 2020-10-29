@@ -29,7 +29,7 @@ namespace Rivet {
 class Angularity : public FunctionOfPseudoJet<double>{
 public:
   /// ctor
-  Angularity(double alpha, double jet_radius, double kappa=1.0, bool isCharged=false, Selector constitCut=SelectorPtMin(0.)) : _alpha(alpha), _radius(jet_radius), _kappa(kappa), _isCharged(isCharged), _constitCut(constitCut) {}
+  Angularity(double alpha, double jet_radius, double kappa=1.0, Selector constitCut=SelectorPtMin(0.)) : _alpha(alpha), _radius(jet_radius), _kappa(kappa), _constitCut(constitCut) {}
 
   /// description
   std::string description() const{
@@ -50,7 +50,6 @@ public:
     double numerator = 0.0, denominator = 0.0;
     unsigned int num = 0;
     for (const auto &c : constits){
-      if ((_isCharged) && (!c.user_index())) continue;
       if (!_constitCut.pass(c)) continue;
       double pt = c.pt();
       // Note: better compute (dist^2)^(alpha/2) to avoid an extra square root
@@ -59,7 +58,7 @@ public:
       num += 1;
     }
     if (denominator == 0) return -1;
-    else if ((num == 1) && (_kappa==0) && (_alpha==0)) return 1; // e.g. multiplicity variable
+    else if ((num == 1) && (_kappa==0) && (_alpha==0)) return 1; // multiplicity variable
     else if (num == 1) return 0;
     // the formula is only correct for the the typical angularities which satisfy either kappa==1 or alpha==0.
     else return numerator/(pow(denominator, _kappa)*pow(_radius, _alpha));
@@ -74,9 +73,7 @@ protected:
   }
 
   double _alpha, _radius, _kappa;
-  bool _isCharged;
   Selector _constitCut;
-  const uint _minNumConstits = 2;
 };
 
 /**
@@ -242,12 +239,21 @@ protected:
 
           // UNGROOMED VERSION
           // -------------------------------------------------------------------
+          vector<PseudoJet> chargedParticles;
+          for (uint iC=0; iC<jetItr.constituents().size(); iC++)
+            if (jetItr.constituents()[iC].user_index())
+              chargedParticles.push_back(jetItr.constituents()[iC]);
+          vector<PseudoJet> chargedJets = jet_def(chargedParticles);
 
           // Fill hists for each lambda variable
           for (uint lambdaInd=0; lambdaInd < _lambdaVars.size(); lambdaInd++) {
             const LambdaVar & thisLambdaVar = _lambdaVars[lambdaInd];
-            Angularity angularity(thisLambdaVar.beta, jetRadius, thisLambdaVar.kappa, thisLambdaVar.isCharged, thisLambdaVar.constitCut);
-            float val = angularity(jetItr);
+            Angularity angularity(thisLambdaVar.beta, jetRadius, thisLambdaVar.kappa, thisLambdaVar.constitCut);
+            float val = -1;
+            if (thisLambdaVar.isCharged)
+              val = (chargedJets.size()>0) ? angularity(chargedJets[0]) : -1;
+            else
+              val = angularity(jetItr);
             if (val<0) continue;
 
             if (isCentral) {
@@ -265,13 +271,19 @@ protected:
           //fastjet::contrib::ModifiedMassDropTagger mmdt(0.1); mmdt.set_grooming_mode(); mmdt.set_reclustering(false);
           //Recluster ca_cluster(JetDefinition(cambridge_algorithm, JetDefinition::max_allowable_R));
           //PseudoJet groomedJet = mmdt(ca_cluster(jetItr));
-
+          PseudoJet groomedJetCharged;
+          if (chargedJets.size()>0)
+            groomedJetCharged= sd(chargedJets[0]);
 
           // Fill hists for each lambda variable
           for (uint lambdaInd=0; lambdaInd < _lambdaVars.size(); lambdaInd++) {
             const LambdaVar & thisLambdaVar = _lambdaVars[lambdaInd];
-            Angularity angularity(thisLambdaVar.beta, jetRadius, thisLambdaVar.kappa, thisLambdaVar.isCharged, thisLambdaVar.constitCut);
-            float val = angularity(groomedJet);
+            Angularity angularity(thisLambdaVar.beta, jetRadius, thisLambdaVar.kappa, thisLambdaVar.constitCut);
+            float val = -1;
+            if (thisLambdaVar.isCharged)
+             val = (chargedJets.size()>0) ? angularity(groomedJetCharged) : -1;
+            else
+             val = angularity(groomedJet);
             if (val<0) continue;
 
             if (isCentral) {
