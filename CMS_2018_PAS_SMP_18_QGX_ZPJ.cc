@@ -31,7 +31,7 @@ namespace Rivet {
 class Angularity : public FunctionOfPseudoJet<double>{
 public:
   /// ctor
-  Angularity(double alpha, double jet_radius, double kappa=1.0, bool isCharged=false, Selector constitCut=SelectorPtMin(0.)) : _alpha(alpha), _radius(jet_radius), _kappa(kappa), _isCharged(isCharged), _constitCut(constitCut) {}
+  Angularity(double alpha, double jet_radius, double kappa=1.0, Selector constitCut=SelectorPtMin(0.)) : _alpha(alpha), _radius(jet_radius), _kappa(kappa), _constitCut(constitCut) {}
 
   /// description
   std::string description() const{
@@ -52,7 +52,6 @@ public:
     double numerator = 0.0, denominator = 0.0;
     unsigned int num = 0;
     for (const auto &c : constits){
-      if ((_isCharged) && (!c.user_index())) continue;
       if (!_constitCut.pass(c)) continue;
       double pt = c.pt();
       // Note: better compute (dist^2)^(alpha/2) to avoid an extra square root
@@ -60,8 +59,9 @@ public:
       denominator += pt;
       num += 1;
     }
-    if (!((num >= _minNumConstits) && (denominator > 0))) return -1;
-    // the formula is only correct for the the typical angularities which satisfy either kappa==1 or beta==0.
+    if (denominator == 0) return -1;
+    else if ((num == 1) && (_kappa==0) && (_alpha==0)) return 1; // multiplicity variable
+    // the formula is only correct for the the typical angularities which satisfy either kappa==1 or alpha==0.
     else return numerator/(pow(denominator, _kappa)*pow(_radius, _alpha));
   }
 
@@ -74,9 +74,7 @@ protected:
   }
 
   double _alpha, _radius, _kappa;
-  bool _isCharged;
   Selector _constitCut;
-  const uint _minNumConstits = 2;
 };
 
 
@@ -113,12 +111,7 @@ protected:
     void init() {
 
       // Initialise and register projections
-      // Particles for the jets
       FinalState fs(-5, 5, 0.0*GeV);
-      VetoedFinalState jet_input(fs);
-      jet_input.vetoNeutrinos();
-      addProjection(jet_input, "JET_INPUT");
-
       // for the muons
       double mu_pt = 26.;
       double mz_min = (90-20);
@@ -135,6 +128,12 @@ protected:
       FinalState fs_muons(-eta_max, eta_max, 0*GeV);
       IdentifiedFinalState muons_noCut(fs_muons, {PID::MUON, PID::ANTIMUON});
       addProjection(muons_noCut, "MUONS_NOCUT");
+
+      // Particles for the jets
+      VetoedFinalState jet_input(fs);
+      jet_input.vetoNeutrinos();
+      jet_input.addVetoOnThisFinalState(getProjection<ZFinder>("ZFinder"));
+      addProjection(jet_input, "JET_INPUT");
 
       // Book histograms
       // resize vectors appropriately
@@ -263,17 +262,7 @@ protected:
         // Now do selection criteria
         bool passZpJ = false;
         if (jets.size() < 1) continue;
-        PseudoJet jet1;
-        bool overlap = false;
-        for (const auto & j : jets) {
-          overlap = false;
-          for (const auto & m : muons.particlesByPt()) {
-            if ((m.pt() > 0.5*j.pt()) && (j.squared_distance(m) < jetRadius*jetRadius)) {
-              overlap = true; break; }
-          }
-          if (!overlap) { jet1 = j; break; } // Jet without overlap found
-        }
-        if (overlap) continue; // No jet without overlap found
+        PseudoJet jet1 = jets[0];
         float jet1pt = jet1.pt();
         float asym = fabs((jet1pt - zpt) / (jet1pt+zpt));
         float dphi = Rivet::deltaPhi(jet1.phi(), z.phi());
@@ -306,14 +295,22 @@ protected:
 
         // UNGROOMED VERSION
         // -------------------------------------------------------------------
+        vector<PseudoJet> chargedParticles;
+        for (uint iC=0; iC<jet1.constituents().size(); iC++)
+          if (jet1.constituents()[iC].user_index())
+            chargedParticles.push_back(jet1.constituents()[iC]);
+        vector<PseudoJet> chargedJets = jet_def(chargedParticles);
 
         // Fill hists for each lambda variable
         for (uint lambdaInd=0; lambdaInd < _lambdaVars.size(); lambdaInd++) {
           const LambdaVar & thisLambdaVar = _lambdaVars[lambdaInd];
-          Angularity angularity(thisLambdaVar.beta, jetRadius, thisLambdaVar.kappa, thisLambdaVar.isCharged, thisLambdaVar.constitCut);
-          float val = angularity(jet1);
+          Angularity angularity(thisLambdaVar.beta, jetRadius, thisLambdaVar.kappa, thisLambdaVar.constitCut);
+          float val = -1;
+          if (thisLambdaVar.isCharged)
+            val = (chargedJets.size()>0) ? angularity(chargedJets[0]) : -1;
+          else
+            val = angularity(jet1);
           if (val<0) continue;
-
           _h_zpj[radiusInd][lambdaInd][ptBinInd]->fill(val, weight);
         }
 
@@ -325,14 +322,20 @@ protected:
         //fastjet::contrib::ModifiedMassDropTagger mmdt(0.1); mmdt.set_grooming_mode(); mmdt.set_reclustering(false);
         //Recluster ca_cluster(JetDefinition(cambridge_algorithm, JetDefinition::max_allowable_R));
         //PseudoJet groomedJet = mmdt(ca_cluster(jetItr));
+        PseudoJet groomedJetCharged;
+        if (chargedJets.size()>0)
+          groomedJetCharged= sd(chargedJets[0]);
 
         // Fill hists for each lambda variable
         for (uint lambdaInd=0; lambdaInd < _lambdaVars.size(); lambdaInd++) {
           const LambdaVar & thisLambdaVar = _lambdaVars[lambdaInd];
-          Angularity angularity(thisLambdaVar.beta, jetRadius, thisLambdaVar.kappa, thisLambdaVar.isCharged, thisLambdaVar.constitCut);
-          float val = angularity(groomedJet);
+          Angularity angularity(thisLambdaVar.beta, jetRadius, thisLambdaVar.kappa, thisLambdaVar.constitCut);
+          float val = -1;
+          if (thisLambdaVar.isCharged)
+           val = (chargedJets.size()>0) ? angularity(groomedJetCharged) : -1;
+          else
+           val = angularity(groomedJet);
           if (val<0) continue;
-
           _h_zpj_groomed[radiusInd][lambdaInd][ptBinInd]->fill(val, weight);
         }
       } // end loop over jet radii
