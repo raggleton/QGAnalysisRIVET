@@ -198,7 +198,7 @@ protected:
         float jetRadius = _jetRadii.at(radiusInd);
 
         JetDefinition jet_def(antikt_algorithm, jetRadius);
-        vector<PseudoJet> jets = (SelectorNHardest(2) * SelectorAbsRapMax(1.7) * SelectorPtMin(15))(jet_def(particles));
+        vector<PseudoJet> jets = (SelectorNHardest(2) * SelectorPtMin(15))(jet_def(particles));
 
         bool passDijet = false;
         if (jets.size() < 2) continue;
@@ -208,7 +208,7 @@ protected:
         float jet2pt = jet2.pt();
         float asym = (jet1pt - jet2pt) / (jet1pt+jet2pt);
         float dphi = Rivet::deltaPhi(jet1.phi(), jet2.phi());
-        passDijet = ((asym < 0.3) && (dphi > 2.0));
+        passDijet = ((fabs(jet1.rapidity()) < 1.7) && (fabs(jet2.rapidity()) < 1.7) && (asym < 0.3) && (dphi > 2.0));
 
         if (!passDijet) continue;
 

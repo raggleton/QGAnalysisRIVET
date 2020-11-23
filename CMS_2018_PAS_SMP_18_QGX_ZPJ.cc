@@ -229,7 +229,7 @@ protected:
         float jetRadius = _jetRadii.at(radiusInd);
 
         JetDefinition jet_def(antikt_algorithm, jetRadius);
-        vector<PseudoJet> jets = (SelectorAbsRapMax(1.7) * SelectorPtMin(15))(jet_def(particles));
+        vector<PseudoJet> jets = (SelectorPtMin(15))(jet_def(particles));
 
         const FinalState& muons = applyProjection<IdentifiedFinalState>(event, "MUONS_NOCUT");
         _h_n_muons_no_cut->fill(muons.size(), weight);
@@ -265,7 +265,7 @@ protected:
         float jet1pt = jet1.pt();
         float asym = fabs((jet1pt - zpt) / (jet1pt+zpt));
         float dphi = Rivet::deltaPhi(jet1.phi(), z.phi());
-        passZpJ = ((zpt > 30) && (asym < 0.3) && (dphi > 2.0));
+        passZpJ = ((fabs(jet1.rapidity()) < 1.7) && (zpt > 30) && (asym < 0.3) && (dphi > 2.0));
 
         if (!passZpJ) continue;
 
